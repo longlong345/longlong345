@@ -1,0 +1,22 @@
+public int binarySearchRecursive( int a[], int l, int r, int target)
+	{
+		// RECURSIVE IMPLEMENTATION OF BINARY SEARCH
+		int mid = (l+r)/2;
+		
+		// base case 1 = checks if array is empty or not
+		if ( r - l < 0) {
+			return -1;
+		}
+		// base case 2 = checks if array middle is the target value
+		if ( target == a[mid] ) {
+			return mid;
+		}
+		// recursive case 1 = removes left array
+		else if ( target >= a[mid]) {
+			return binarySearchRecursive(a, mid+1, r, target);
+		}
+		// recursive case 2 = removes right array
+		else {
+			return binarySearchRecursive(a, l, mid-1, target);
+		}
+	}
